@@ -1,0 +1,27 @@
+{% extends "learning_logs/base.html" %}
+{% block header %}
+  <h1>Topics</h1>
+{% endblock header%}
+
+{% block content %}
+
+ 
+  <ul>
+      {% for topic in topics %}
+        <li>
+          <h3>
+            <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+          </h3>
+        </li>
+      {% empty %}
+        <li>No topics have been added yet.</li>
+      {% endfor %}
+  </ul>
+  <h3><a href="{% url 'learning_logs:new_topic' %}">Add a new topic:</a></h3>
+
+{% endblock content %}
+<!--第一行是继承base.html
+一个for循环，与end for 配对
+两个 ul 之间是项目列表， 两个 li 之间是一个项目列表项
+{{ topic }}打印topic的值
+-->
