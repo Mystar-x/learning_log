@@ -144,7 +144,10 @@ if cwd == '/app' or cwd[:4] == '/tmp':
 
     #支持所有主机头
     ALLOWED_HOSTS=['*']
-    DEBUG=True
+
+    #只允许heroku托管这个项目
+    ALLOWED_HOSTS=['learninglog520.herokuapp.com']
+    DEBUG=False
 
 #静态资产配置
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
